@@ -1,0 +1,42 @@
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/markdown/markdown.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script src="../plugin/math/math.js"></script>
+<script>
+  n = new Date();
+  y = n.getFullYear();
+  m = n.getMonth() + 1;
+  d = n.getDate();
+  document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+</script>
+<script>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    autoPlayMedia: true,
+    viewDistance: 4,
+    slideNumber: "c/t",
+    transition: "slide",
+    math: {
+      mathjax:
+        "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js",
+      config: "TeX-AMS_HTML-full", // See http://docs.mathjax.org/en/latest/config-files.html
+      extensions: ["AMSmath.js"],
+    },
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX],
+  });
+  
+  Reveal.configure({ pdfMaxPagesPerSlide: 2 });
+
+  // Create and append the "Go to Home" button
+  // const button = document.createElement("button");
+  // button.innerText = "🏠";
+  // button.className = "home-button";
+  // button.onclick = function () {
+  //   window.location.href = "{{ site.url }}{{ site.baseurl }}/slides/#/1";
+  // };
+  // document.body.appendChild(button);
+</script>
