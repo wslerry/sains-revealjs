@@ -1,75 +1,11 @@
 <div class="reveal">
-  {% if page.theme == 'sains' %}
   <div class="sains-logo"></div>
-  {% endif %}
+  
+  <!-- Include the page.html file -->
   <div class="slides">
-    <!-- first page -->
-    {% if page.theme == 'sains' %}
-      <section
-          data-background-image="../dist/theme/img/front.jpg"
-          data-background-size="cover"
-          data-background-repeat="no-repeat"
-      >
-        <div class="container">
-          <div class="col"></div>
-          <div class="col">
-            <h1 class="rightside">{{page.title}}</h1>
-            <br />
-            <p class="rightside">{{page.description}}</p>
-            <br />
-            <hr />
-            {% if page.date%}
-            <p class="rightside">{{page.date}}</p>
-            {% else %}
-            <p class="rightside" id="date"></p>
-            {% endif %}
-          </div>
-        </div>
-      </section>
-    {% else %}
-      <section>
-        <div class="container">
-          <div class="col"></div>
-          <div class="col">
-            <h1 class="rightside">{{page.title}}</h1>
-            <br />
-            <p class="rightside">{{page.description}}</p>
-            <br />
-            <hr />
-            {% if page.date%}
-            <p class="rightside">{{page.date}}</p>
-            {% else %}
-            <p class="rightside" id="date"></p>
-            {% endif %}
-          </div>
-        </div>
-      </section>
-    {% endif %}
-
-    <!-- read markdown -->
-    <section
-      data-markdown
-      data-separator="^\n-next-\n$"
-      data-separator-vertical="^\n-down-\n$"
-      data-separator-notes="^Note:"
-      data-charset="iso-8859-15"
-    >
-      <script type="text/template">
-        {{ content }}
-      </script>
-    </section>
-    
-    <!-- {% for slide in site.slides %}
-      <section
-        data-markdown="{{ slide.path }}"
-        data-separator="^\r?\n\r?\n\r?\n"
-        data-separator-vertical="^\r?\n\r?\n"
-        data-separator-notes="^Note:"
-        data-charset="iso-8859-15"
-      >
-      </section>
-    {% endfor %} -->
+    {% include page2.html %}
   </div>
+
   {% if page.theme == 'sains' %}
   <div class="custom-footer">
     <div class="custom-footer-text">www.sains.com.my</div>

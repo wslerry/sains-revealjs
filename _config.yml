@@ -6,9 +6,12 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: ""
 url: ""
 
+encoding: UTF-8
+
 collections:
   slides:
     output: true
+    permalink: /:collection/:name
 
 kramdown:
   # Use GitHub flavored markdown, including triple backtick fenced code blocks

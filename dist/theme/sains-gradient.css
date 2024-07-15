@@ -87,6 +87,8 @@ section.has-dark-background h6 {
   --r-selection-background-color: #ef9898;
   --r-selection-color: #fff;
   --r-progress-bar-color: #8d8d8da2;
+  /* logo */
+  --r-site-logo: url(logo/sains.png);
 }
 
 .reveal-viewport {
@@ -528,7 +530,7 @@ section.has-dark-background h6 {
   text-align: center;
   text-decoration: none;
   z-index: 1000;
-  background-image: url('logo/sains.png');
+  background-image: url(logo/sains.png);
   /* Replace with your logo path */
   background-size: contain;
   /* Adjust as needed */
@@ -545,8 +547,7 @@ section.has-dark-background h6 {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 50px;
-  /* Adjust height as needed */
+  height: 32px;  
   background-color: #D20001;
   display: flex;
   align-items: center;
@@ -556,15 +557,14 @@ section.has-dark-background h6 {
 
 .reveal .custom-footer-text {
   color: white;
-  font-size: 32px;
-  /* Adjust font size as needed */
+  font-size: 18px;
   z-index: 2;
-  /* Ensure it appears above the banner */
 }
 
 .reveal .slide-number {
-  bottom: 10px;
-  /* Adjust to vertically center in the footer */
+  bottom: 2px;
+  justify-content: center;
+  font-size: 18px;
 }
 
 @keyframes gradientAnimation {

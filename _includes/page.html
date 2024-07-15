@@ -1,0 +1,56 @@
+<!-- first page -->
+{% if page.theme == 'sains' %}
+<section
+  data-background-image="../dist/theme/img/front.jpg"
+  data-background-size="cover"
+  data-background-repeat="no-repeat"
+>
+  <div class="container">
+    <div class="col"></div>
+    <div class="col">
+      <h1 class="rightside">{{page.title}}</h1>
+      <br />
+      <p class="rightside">{{page.description}}</p>
+      <br />
+      <hr />
+      {% if page.date%}
+      <p class="rightside">{{page.date}}</p>
+      {% else %}
+      <p class="rightside" id="date"></p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% else %}
+<section>
+  <div class="container">
+    <div class="col"></div>
+    <div class="col">
+      <h1 class="rightside">{{page.title}}</h1>
+      <br />
+      <p class="rightside">{{page.description}}</p>
+      <br />
+      <hr />
+      {% if page.date%}
+      <p class="rightside">{{page.date}}</p>
+      {% else %}
+      <p class="rightside" id="date"></p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- read markdown -->
+<!-- data-separator for down -->
+<!-- "data-separator-vertical for next page -->
+<section
+data-markdown
+data-separator="^\n-next-\n$"
+data-separator-vertical="^\n-down-\n$"
+data-separator-notes="^Note:"
+data-charset="utf-8"
+>
+<script type="text/template">
+  {{ content }}
+</script>

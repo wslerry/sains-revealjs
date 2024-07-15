@@ -442,14 +442,6 @@ section.has-dark-background h6 {
   * SAINS THEME
   *********************************************/
 
-/* .backgrounds .frontpage {
-  background-image: var(--r-background-image-frontpage);
-  background-size: var(--r-background-size);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--r-background-color);
-} */
-
 .reveal .slides section .leftside {
   line-height: var(--r-heading-line-height);
   letter-spacing: var(--r-heading-letter-spacing);
@@ -521,20 +513,11 @@ section.has-dark-background h6 {
   background-repeat: no-repeat;
 }
 
-/* .reveal .custom-header .sains-logo {
-  margin-left: 10px;
-  background-image: var(--r-site-logo);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: auto;
-  height: auto;
-} */
-
 .reveal .custom-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 54px;  
+  height: 32px;  
   background-color: #D20001;
   display: flex;
   align-items: center;
@@ -545,12 +528,11 @@ section.has-dark-background h6 {
 .reveal .custom-footer-text {
   color: white;
   font-size: 18px;
-  /* Adjust font size as needed */
   z-index: 2;
-  /* Ensure it appears above the banner */
 }
 
 .reveal .slide-number {
-  bottom: 10px;
+  bottom: 2px;
+  justify-content: center;
   font-size: 18px;
 }

@@ -16,8 +16,9 @@
     progress: true,
     history: true,
     center: true,
-    autoPlayMedia: true,
-    viewDistance: 4,
+    autoPlayMedia: false,
+    touch: true,
+    viewDistance: 3,
     slideNumber: "c/t",
     transition: "slide",
     math: {
@@ -25,6 +26,9 @@
         "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js",
       config: "TeX-AMS_HTML-full", // See http://docs.mathjax.org/en/latest/config-files.html
       extensions: ["AMSmath.js"],
+    },
+    markdown: {
+      smartypants: true,
     },
     plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX],
   });
