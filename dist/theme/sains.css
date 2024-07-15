@@ -445,7 +445,6 @@ section.has-dark-background h6 {
 .reveal .slides section .leftside {
   line-height: var(--r-heading-line-height);
   letter-spacing: var(--r-heading-letter-spacing);
-  text-transform: var(--r-heading-text-transform);
   word-wrap: break-word;
   text-align: left;
 }
@@ -456,6 +455,7 @@ section.has-dark-background h6 {
   text-transform: var(--r-heading-text-transform);
   word-wrap: break-word;
   text-align: right;
+  /* background-color: rgba(41, 40, 40, 0.5); */
 }
 
 .reveal .slides section hr {
@@ -463,7 +463,7 @@ section.has-dark-background h6 {
   margin-bottom: 0;
   border: 1px solid rgb(255, 255, 255);
   bottom: 1em;
-  width: 5em;
+  width: 12em;
 }
 
 .container {

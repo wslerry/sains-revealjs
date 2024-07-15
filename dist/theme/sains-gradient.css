@@ -514,26 +514,19 @@ section.has-dark-background h6 {
   background-color: #0056b3;
 }
 
-
 .sains-logo {
   position: fixed;
-  /* Fixed position */
   top: 20px;
-  /* Distance from the top */
   left: 35px;
-  /* Distance from the left */
   padding: 20px 20px;
-  /* font-size: 50px; */
-  width: 32px;
-  height: 32px;
+  width: auto;
+  height: auto;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   z-index: 1000;
-  background-image: url(logo/sains.png);
-  /* Replace with your logo path */
+  background-image: var(--r-site-logo);
   background-size: contain;
-  /* Adjust as needed */
   background-repeat: no-repeat;
 }
 

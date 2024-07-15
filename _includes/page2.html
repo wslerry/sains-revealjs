@@ -10,9 +10,14 @@
     <div class="col">
       <h1 class="rightside">{{page.title}}</h1>
       <br />
+      {% if page.description %}
       <p class="rightside">{{page.description}}</p>
       <br />
+      {% endif %}
       <hr />
+      {% if page.location%}
+      <p class="rightside">{{page.location}}</p>
+      {% endif %}
       {% if page.date%}
       <p class="rightside">{{page.date}}</p>
       {% else %}
@@ -24,13 +29,17 @@
 {% else %}
 <section>
   <div class="container">
-    <div class="col"></div>
     <div class="col">
       <h1 class="rightside">{{page.title}}</h1>
       <br />
+      {% if page.description %}
       <p class="rightside">{{page.description}}</p>
       <br />
+      {% endif %}
       <hr />
+      {% if page.location%}
+      <p class="rightside">{{page.location}}</p>
+      {% endif %}
       {% if page.date%}
       <p class="rightside">{{page.date}}</p>
       {% else %}
@@ -44,6 +53,7 @@
 <!-- content goes here -->
 {% assign file_extension = page.path | split: '.' | last %} 
 {% if file_extension == 'html' %}
+  {% if page.theme == 'sains' %}
   <section
     data-background-image="../dist/theme/img/background_dark.jpg"
     data-markdown
@@ -52,6 +62,15 @@
     data-separator-notes="^Note:"
     data-charset="utf-8"
   >
+  {% else %}
+  <section
+    data-markdown
+    data-separator="^\n-next-\n$"
+    data-separator-vertical="^\n-down-\n$"
+    data-separator-notes="^Note:"
+    data-charset="utf-8"
+  >
+  {% endif %}
     <script type="text/template">
       {{ content }}
     </script>
