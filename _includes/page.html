@@ -1,7 +1,7 @@
 <!-- first page -->
 {% if page.theme == 'sains' %}
 <section
-  data-background-image="../dist/theme/img/sains_bg_2.jpg"
+  data-background-image="{{ site.baseurl }}/dist/theme/img/sains_bg_2.jpg"
   data-background-size="cover"
   data-background-repeat="no-repeat"
 >
@@ -44,13 +44,26 @@
 <!-- read markdown -->
 <!-- data-separator for down -->
 <!-- "data-separator-vertical for next page -->
+{% if page.theme == 'sains' %}
 <section
-data-markdown
-data-separator="^\n-next-\n$"
-data-separator-vertical="^\n-down-\n$"
-data-separator-notes="^Note:"
-data-charset="utf-8"
+  data-background-image="{{ site.baseurl }}/dist/theme/img/background_dark.jpg"
+  data-background-size="cover"
+  data-background-repeat="no-repeat"
+  data-markdown
+  data-separator="^\n-next-\n$"
+  data-separator-vertical="^\n-down-\n$"
+  data-separator-notes="^Note:"
+  data-charset="utf-8"
 >
+{% else %}
+<section
+  data-markdown
+  data-separator="^\n-next-\n$"
+  data-separator-vertical="^\n-down-\n$"
+  data-separator-notes="^Note:"
+  data-charset="utf-8"
+>
+{% endif %}
 <script type="text/template">
   {{ content }}
 </script>

@@ -30,7 +30,8 @@ class Testing123():
 -down-
 
 $\LaTeX$ can be render in markdown slide by using command as:
-```
+
+```latex
 $$ J(\theta_0,\theta_1) = \sum_{i=0} $$
 ```
 
@@ -38,11 +39,21 @@ and will produce $$ J(\theta_0,\theta_1) = \sum_{i=0} $$
 
 -down-
 
-Another \LaTeX
+Another $ \LaTeX $ format:
+```latex
 `\[\begin{aligned}
-\dot{x} &amp; = \sigma(y-x) \\
-\dot{y} &amp; = \rho x - y - xz \\
-\dot{z} &amp; = -\beta z + xy
+\dot{x} & = \sigma(y-x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{aligned} \]`
+```
+
+### The Lorenz Equations
+
+`\[\begin{aligned}
+  \dot{x} & = \sigma(y-x) \\
+  \dot{y} & = \rho x - y - xz \\
+  \dot{z} & = -\beta z + xy
 \end{aligned} \]`
 
 -next-
