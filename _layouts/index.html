@@ -3,6 +3,16 @@
   <head>
     <title>{{site.title}}</title>
     <link rel="icon" href="{{ site.baseurl }}/assets/favicon.png" type="image/png" />
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests: default-src * data: mediastream: blob: filesystem: cdvfile: ws: ms-appdata: ms-appx-web: gap: 'unsafe-inline' 'unsafe-eval';"
+    />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
     <link
       rel="stylesheet"
       href="{{ site.baseurl }}/dist/css/all.min.css"
@@ -58,7 +68,7 @@
               alt="{{ slide.title }} Thumbnail"
             />
             <div class="card-body">
-              <h5 class="card-title">{{ slide.title }}</h5>
+              <!-- <h5 class="card-title">{{ slide.title }}</h5> -->
               <a
                 class="btn btn-custom-blue"
                 href="{{ site.baseurl }}{{ slide.url }}"
@@ -69,9 +79,10 @@
                     class="fa-solid fa-file-powerpoint fa-stack-1x fa-inverse"
                   ></i>
                 </span>
-                <!-- &nbsp; -->
+                &nbsp;
+                &nbsp;
               </a>
-              <!-- <h2 class="card-title">{{ slide.title }}</h2> -->
+              <h2 class="card-title">{{ slide.title }}</h2>
             </div>
           </div>
         </div>

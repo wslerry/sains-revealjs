@@ -148,12 +148,16 @@ section.has-dark-background h6 {
   font-size: var(--r-heading1-size);
 }
 
-/* .reveal h1, p {
-  text-align: right;
-} */
+.reveal h1::before {
+  content: "📍 ";
+}
 
 .reveal h2 {
   font-size: var(--r-heading2-size);
+}
+
+.reveal h2::before {
+  content: "➡️ ";
 }
 
 .reveal h3 {

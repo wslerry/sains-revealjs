@@ -178,6 +178,14 @@ section.has-dark-background h6 {
   text-shadow: var(--r-heading1-text-shadow);
 }
 
+.reveal h1::before {
+  content: "📍 ";
+}
+
+.reveal h2::before {
+  content: "➡️ ";
+}
+
 /*********************************************
   * OTHER
   *********************************************/
