@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include meta.html %}
+</head>
+
+<body>
+    <div class="reveal">
+        <a href="{{ page.url | relative_url }}#">
+            <div class="sains-logo"></div>
+        </a>
+        <div class="slides">
+            <!-- first page -->
+            {% if page.theme == 'sains' %}
+            <section
+            data-background-image="{{ site.baseurl }}/dist/theme/img/sains_bg_2.jpg"
+            data-background-size="cover"
+            data-background-repeat="no-repeat"
+            >
+            <div class="container">
+                <div class="col"></div>
+                <div class="col">
+                <h1 class="rightside">{{ page.title }}</h1>
+                <br />
+                {% if page.description %}
+                <p class="rightside">🏷️ {{ page.description }}</p>
+                <br />
+                {% endif %}
+                <hr />
+                {% if page.location %}
+                <p class="rightside">🏢 {{ page.location }}</p>
+                {% endif %}
+                {% if page.date %}
+                <p class="rightside">📅 {{ page.date }}</p>
+                {% else %}
+                <p class="rightside" id="date"></p>
+                {% endif %}
+                </div>
+            </div>
+            </section>
+            {% else %}
+            <section>
+            <div class="container">
+                <div class="col">
+                <h1 class="rightside">{{ page.title }}</h1>
+                <br />
+                {% if page.description %}
+                <p class="rightside">🏷️ {{ page.description }}</p>
+                <br />
+                {% endif %}
+                <hr />
+                {% if page.location %}
+                <p class="rightside">🏢 {{ page.location }}</p>
+                {% endif %}
+                {% if page.date %}
+                <p class="rightside">📅 {{ page.date }}</p>
+                {% else %}
+                <p class="rightside" id="date"></p>
+                {% endif %}
+                </div>
+            </div>
+            </section>
+            {% endif %}
+
+            <!-- content goes here -->
+            {% assign file_extension = page.path | split: '.' | last %}
+            {% if file_extension == 'html' %}
+                {% if page.theme == 'sains' %}
+            <section
+                data-background-image="{{ site.baseurl }}/dist/theme/img/background_dark.jpg"
+                data-background-size="cover"
+                data-background-repeat="no-repeat"
+                data-markdown
+                data-separator="^\n\n"
+                data-separator-vertical="^\n\n\n"
+                data-separator-notes="^Note:"
+                data-charset="utf-8"
+            >
+                {% else %}
+            <section
+                data-markdown
+                data-separator="^\n\n"
+                data-separator-vertical="^\n\n\n"
+                data-separator-notes="^Note:"
+                data-charset="utf-8"
+            >
+                {% endif %}
+                <script type="text/template">
+                    {{ content }}
+                </script>
+            {% else %}
+            <!-- For Markdown files -->
+            <section
+                data-markdown
+                data-separator="^\r\n--\r\n$"
+                data-separator-vertical="^\r\n---\r\n$"
+                data-separator-notes="^Note:"
+                data-charset="utf-8"
+            >
+                <script type="text/template">
+                    {{ content }}
+                </script>
+            </section>
+            {% endif %}
+
+        </div>
+
+        {% if page.theme == 'sains' %}
+        <div class="custom-footer">
+            <div class="custom-footer-text">www.sains.com.my</div>
+        </div>
+        {% else %}
+        <div class="custom-footer">
+            <div class="custom-footer-text" font-size="14px">www.sains.com.my</div>
+        </div>
+        {% endif %}
+    </div>
+    {% include scripts.html %}
+</body>
+
+</html>
