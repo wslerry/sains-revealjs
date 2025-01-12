@@ -7,7 +7,7 @@ gem 'kramdown-parser-gfm'
 gem 'csv'
 gem 'bigdecimal'
 gem 'base64'
-gen 'logger'
+gem 'logger'
 
 group :jekyll_plugins do
   gem "jekyll-sitemap"
