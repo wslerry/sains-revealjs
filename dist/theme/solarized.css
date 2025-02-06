@@ -36,14 +36,12 @@ html * {
   --r-heading4-size: 1em;
   --r-code-font: monospace;
   --r-link-color: #268bd2;
-  --r-link-color-dark: #1a6091;
-  --r-link-color-hover: #78b9e6;
+  --r-link-color-dark: rgb(32.3, 118.15, 178.5);
+  --r-link-color-hover: rgb(77.5161290323, 162.8774193548, 222.8838709677);
   --r-selection-background-color: #d33682;
   --r-selection-color: #fff;
   --r-overlay-element-bg-color: 0, 0, 0;
   --r-overlay-element-fg-color: 240, 240, 240;
-  /* logo */
-  --r-site-logo: url(logo/sains.png);
 }
 
 .reveal-viewport {
@@ -363,49 +361,3 @@ html * {
     background-color: var(--r-background-color);
   }
 }
-
-
-/*********************************************
-  * SAINS THEME
-  *********************************************/
-
-
-  .sains-logo {
-    position: fixed;
-    top: 20px;
-    left: 35px;
-    padding: 20px 20px;
-    width: auto;
-    height: auto;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    z-index: 1000;
-    background-image: var(--r-site-logo);
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  .reveal .custom-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 32px;  
-    background-color: #D20001;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
-  
-  .reveal .custom-footer-text {
-    color: white;
-    font-size: 18px;
-    z-index: 2;
-  }
-  
-  .reveal .slide-number {
-    bottom: 2px;
-    justify-content: center;
-    font-size: 18px;
-  }
