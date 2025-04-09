@@ -3,8 +3,8 @@ title: Sains Slides Template
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
   This is an awesome slide build on reveal.js and jekyll
-baseurl: ""
-url: ""
+baseurl: "" # the subpath of your site, e.g. /blog or /slides or /whatever
+url: "" # the base hostname & protocol for your site, e.g. https://sains.com.my
 
 encoding: UTF-8
 

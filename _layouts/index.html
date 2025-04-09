@@ -18,12 +18,10 @@
       href="{{ site.baseurl }}/dist/css/all.min.css"
       type="text/css"
     />
-    <!-- Latest compiled and minified CSS -->
     <link
       href="{{ site.baseurl }}/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Latest compiled JavaScript -->
     <script src="{{ site.baseurl }}/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
@@ -58,31 +56,28 @@
   <body>
     <div class="container center">
       <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for slide in site.slides %}
-        <div class="col">
-          <div class="card slide-card">
-            <!-- <img src="{{ slide.thumbnail }}" class="card-img-top"> -->
-            <img
-              src="{{ site.baseurl }}/assets/thumbnails/{{ slide.thumbnail }}"
-              class="card-img-top"
-              alt="{{ slide.title }} Thumbnail"
-            />
-            <div class="card-body">
-              <!-- <h5 class="card-title">{{ slide.title }}</h5> -->
-              <a
-                class="btn btn-custom-blue"
-                href="{{ site.baseurl }}{{ slide.url }}"
-              >
-                <span class="fa-stack fa-2x">
-                  <!-- <i class="fa-solid fa-circle fa-stack-2x"></i> -->
-                  <i class="fa-solid fa-file-powerpoint fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-              <h2 class="card-title">{{ slide.title }}</h2>
+      {% for slide in site.slides %}
+          <!-- <script>
+            console.log("Slide Title: {{ slide }}");
+          </script> -->
+          <div class="col">
+            <div class="card slide-card">
+              {% if slide.thumbnail %}
+                <img src="{{ site.baseurl }}/assets/thumbnails/{{ slide.thumbnail }}" class="card-img-top" alt="{{ slide.title }} Thumbnail" />
+              {% else %}
+                <img src="{{ site.baseurl }}/assets/thumbnails/thumb_reveal.png" class="card-img-top" alt="Default Thumbnail" />
+              {% endif %}
+              <div class="card-body">
+                <a class="btn btn-custom-blue" href="{{ site.baseurl }}{{ slide.url }}">
+                  <span class="fa-stack fa-2x">
+                    <i class="fa-solid fa-file-powerpoint fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                <h2 class="card-title">{{ slide.title }}</h2>
+              </div>
             </div>
           </div>
-        </div>
-        {% endfor %}
+      {% endfor %}
       </div>
     </div>
   </body>
