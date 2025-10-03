@@ -13,15 +13,18 @@ show_dir_listing: false
 collections:
   slides:
     output: true
-    permalink: /:collection/:name
+    permalink: /slides/:name/
 
+slug: my-presentation
+
+highlighter: rouge
+markdown: kramdown
 kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
   input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
   syntax_highlighter: rouge
+  math_engine: mathjax
+  parse_block_html: true
   syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
     css_class: 'highlight'
 
 # Set the Sass partials directory, as we're using @imports

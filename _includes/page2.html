@@ -1,5 +1,6 @@
 <!-- first page -->
-{% if page.theme == 'sains' %}
+{% assign is_sains = page.theme == 'sains' %}
+{% if is_sains %}
 <section
   data-background-image="{{ site.baseurl }}/dist/theme/img/sains_bg_2.jpg"
   data-background-size="cover"
@@ -8,20 +9,20 @@
   <div class="container">
     <div class="col"></div>
     <div class="col">
-      <h1 class="rightside">{{page.title}}</h1>
+      <h1 class="rightside">{{ page.title }}</h1>
       <br />
       {% if page.description %}
-      <p class="rightside">🏷️ {{page.description}}</p>
-      <br />
+        <p class="rightside">🏷️ {{ page.description }}</p>
+        <br />
       {% endif %}
       <hr />
-      {% if page.location%}
-      <p class="rightside">🏢 {{page.location}}</p>
+      {% if page.location %}
+        <p class="rightside">🏢 {{ page.location }}</p>
       {% endif %}
-      {% if page.date%}
-      <p class="rightside">📅 {{page.date}}</p>
+      {% if page.date %}
+        <p class="rightside">📅 {{ page.date }}</p>
       {% else %}
-      <p class="rightside" id="date"></p>
+        <p class="rightside" id="date"></p>
       {% endif %}
     </div>
   </div>
@@ -30,62 +31,64 @@
 <section>
   <div class="container">
     <div class="col">
-      <h1 class="rightside">{{page.title}}</h1>
+      <h1 class="rightside">{{ page.title }}</h1>
       <br />
       {% if page.description %}
-      <p class="rightside">🏷️ {{page.description}}</p>
-      <br />
+        <p class="rightside">🏷️ {{ page.description }}</p>
+        <br />
       {% endif %}
       <hr />
-      {% if page.location%}
-      <p class="rightside">🏢 {{page.location}}</p>
+      {% if page.location %}
+        <p class="rightside">🏢 {{ page.location }}</p>
       {% endif %}
-      {% if page.date%}
-      <p class="rightside">📅 {{page.date}}</p>
+      {% if page.date %}
+        <p class="rightside">📅 {{ page.date }}</p>
       {% else %}
-      <p class="rightside" id="date"></p>
+        <p class="rightside" id="date"></p>
       {% endif %}
     </div>
   </div>
 </section>
 {% endif %}
 
-<!-- content goes here -->
-{% assign file_extension = page.path | split: '.' | last %} 
-{% if file_extension == 'html' %}
-  {% if page.theme == 'sains' %}
-  <section
+<!-- content section -->
+{% assign ext = page.path | split: '.' | last %}
+{% assign is_html = ext == 'html' %}
+
+{% if is_html %}
+<section
+  {% if is_sains %}
     data-background-image="{{ site.baseurl }}/dist/theme/img/background_dark.jpg"
     data-background-size="cover"
     data-background-repeat="no-repeat"
-    data-markdown
-    data-separator="^\n-next-\n$"
-    data-separator-vertical="^\n-down-\n$"
-    data-separator-notes="^Note:"
-    data-charset="utf-8"
-  >
-  {% else %}
-  <section
-    data-markdown
-    data-separator="^\n-next-\n$"
-    data-separator-vertical="^\n-down-\n$"
-    data-separator-notes="^Note:"
-    data-charset="utf-8"
-  >
   {% endif %}
-    <script type="text/template">
-      {{ content }}
-    </script>
-{% else %}
-  <!-- For Markdown files -->
-  <section
-    data-markdown
-    data-separator="^\n-next-\n$"
-    data-separator-vertical="^\n-down-\n$"
-    data-separator-notes="^Note:"
-    data-charset="utf-8"
-  ></section>
+  data-markdown
+  data-separator="^\n-next-\n$"
+  data-separator-vertical="^\n-down-\n$"
+  data-separator-notes="^Note:"
+  data-charset="utf-8"
+>
   <script type="text/template">
-      {{ page.content }}
+    {{ content }}
   </script>
+</section>
+{% else %}
+<section
+  {% if is_sains %}
+    data-background-image="{{ site.baseurl }}/dist/theme/img/background_dark.jpg"
+    data-background-size="cover"
+    data-background-repeat="no-repeat"
+  {% endif %}
+  data-markdown
+  data-separator="^---\n"
+  data-separator-vertical="^--\n"
+  data-separator-notes="^Note:"
+  data-charset="utf-8"
+>
+  <script type="text/template">
+    {% raw %}
+{{ page.content }}
+    {% endraw %}
+  </script>
+</section>
 {% endif %}
